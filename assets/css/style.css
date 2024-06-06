@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Mukta Bold';
     src: url('../fonts/Mukta-bold.ttf') format('truetype');
@@ -20,25 +21,28 @@ header {
     padding: 20px;
     background-color: #f2c45e; 
     color: rgba(0, 0, 0, 0.7); 
- 
+    flex-wrap: wrap;
 }
 
 header .logo {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: auto;
     overflow: hidden;
     margin-right: 20px;
+    flex: 0 1 auto;
 }
 
 header .logo img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 header .header-content {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-width: 0;
 }
 
 header .header-content h1 {
@@ -46,12 +50,12 @@ header .header-content h1 {
     margin: 0;
 }
 
-
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -61,17 +65,12 @@ nav ul li {
 nav ul li a {
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
-    /* font-weight: bold; If you want bold text */
-    font-family: 'Mukta-light', sans-serif;
+    font-family: 'Mukta Light', sans-serif;
 }
 
 nav ul li a:hover {
-    color: rgba(0, 0, 0, 1); /* Change color on hover if desired */
+    color: rgba(0, 0, 0, 1);
 }
-
-
-
-
 
 .container {
     width: 80%;
@@ -80,21 +79,117 @@ nav ul li a:hover {
 
 section {
     display: flex;
+    flex-wrap: wrap;
     padding: 40px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.7);
 }
 
+section .image {
+    flex: 1 1 30%;
+    text-align: center;
+    margin-bottom: 0px;
+    /* margin-right: 20px; */
+    border: 1px solid black;
+}
+
+section .image1 {
+    flex: 1 1 30%;
+    text-align: center;
+    margin-bottom: 0px;
+    /* margin-right: 20px; */
+    /* border: 1px solid black; */
+}
+
 section .image img {
-    max-width: 150px;
-    margin-right: 20px;
+    max-width:30%;
+    height: auto;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+    /* border: 1px solid black; */
+}
+
+section .image1 img {
+    max-width:50%;
+    height: auto;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+    /* border: 1px solid black; */
 }
 
 section .content {
+    flex: 1 1 100%;
+    text-align: justify;
+    /* max-width: 600px; */
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+section .content1 {
+    flex: 1 1 100%;
+    text-align: justify;
     max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid black;
 }
 
 footer {
     text-align: center;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
 }
+.my-table {
+    border-collapse: collapse;
+    /* width: 100%; */
+    flex: 1 1 100%;
+}
+
+.my-table th, .my-table td {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    text-align: left;
+    
+}
+
+.my-table th {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+section .new-container {
+    margin-top: 0px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid white;
+}
+
+section .new-container h3 {
+    font-family: 'Mukta Bold', sans-serif;
+    margin-top: 0;
+}
+
+section .new-container p {
+    font-family: 'Mukta Light', sans-serif;
+    text-align: justify;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header .logo {
+        margin-bottom: 20px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+} 
+
